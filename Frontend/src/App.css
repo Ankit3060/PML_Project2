@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s;
+  font-size: 15px;
+  margin: 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 18px;
+  background-color: #eee;
+  display: none;
+  /* max-height: 0;
+  transition: max-height 0.3s ease-in; */
+  overflow: hidden;
+  margin: -10px 26px 10px 26px;
+
+}
+
+.open { 
+  /* max-height: 150px; */
+  display: block;
+}
+
+.close {
+  max-height: 0;
+  transition: max-height 0.3 ease-in;
+  display: none;
+}
