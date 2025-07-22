@@ -1,28 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../App.css";
-import { useEffect } from "react";
 import axios from "axios";
+import { useMarks } from "../context/marksContext";
+import Pagination from "./Pagination";
 
 function Accordion() {
   const [arrow, setArrow] = useState(null);
   const [data, setData] = useState([]);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [correctAnswer, setCorrectAnswer] = useState(false);
+  const [selectedOptions, setSelectedOptions] = useState({});
+  const [marks, setMarks] = useState([]);
+  const { setTotalMarks } = useMarks();
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage, setPostPerPage] = useState(5);
 
   const handleClick = (index) => {
     setArrow(arrow === index ? null : index);
   };
 
-  useEffect(()=>{
-    const fetchData = async()=>{
+  useEffect(() => {
+    const fetchData = async () => {
       try {
         const response = await axios.get(
           `${import.meta.env.VITE_API_URL}/api/v1/exam/questions`,
-          {
-            withCredentials: true,
-          }
-        );  
-        // console.log(response.data.data);
+          { withCredentials: true }
+        );
         const questions = response.data.data;
         setData(questions);
       } catch (error) {
@@ -32,63 +34,111 @@ function Accordion() {
     fetchData();
   }, []);
 
+  const handleOptionChange = (questionIndex, selectedValue) => {
+    setSelectedOptions((prev) => ({
+      ...prev,
+      [questionIndex]: selectedValue,
+    }));
 
-  const handleOptionChange = (e) => {
-    setSelectedOption(e.target.value);
-    // console.log("Selected option:", e.target.value);
-  }
+    const question = data[questionIndex];
+    if (question.answer === selectedValue) {
+      setMarks((prev) => {
+        if (!prev.includes(questionIndex)) {
+          return [...prev, questionIndex];
+        }
+        return prev;
+      });
+    } else {
+      setMarks((prev) => prev.filter((index) => index !== questionIndex));
+    }
+  };
+
+  useEffect(() => {
+    setTotalMarks(marks.length);
+  }, [marks, setTotalMarks]);
+
+  
+  const lastPostIndex = currentPage * postPerPage;
+  const firstPostIndex = lastPostIndex - postPerPage;
+  const currentPosts = data.slice(firstPostIndex, lastPostIndex);
 
   return (
     <>
-      {data.map((item, index) => {
-        const isCorrects = item.answer === selectedOption;
-        return(
-        <div key={index} className="">
-          <div className="flex items-center px-4">
-            <button className="accordion " onClick={() => handleClick(index)}>
-              {item.question}
-              <span className="absolute cursor-pointer right-10">{arrow === index ? "▲" : "▼"}</span>
-            </button>
-          </div>
-        
-          <div  className={`panel ${arrow === index ? "open" : "close"}`}>
-            <p className="text-gray-500 mb-2">Select the correct options:</p>
-            {item.options.map((option, optionIndex) => {
-              const isSelected = selectedOption === option;
-              const isCorrect = item.answer === option;
-              return (
-                <div key={optionIndex} className="flex items-center">
-                  <input
-                    type="radio"
-                    name={`question-${index}`}
-                    value={option}
-                  className="mr-2 cursor-pointer"
-                  onChange={handleOptionChange}
-                />
+      {currentPosts.map((item, index) => {
+        const actualIndex = firstPostIndex + index;
+        const selected = selectedOptions[actualIndex];
 
-                <label
-                    className={`cursor-pointer ${isSelected
+        return (
+          <div key={actualIndex}>
+            <div className="flex items-center px-4">
+              <button
+                className="accordion text-left w-full font-medium"
+                onClick={() => handleClick(actualIndex)}
+              >
+                {item.question}
+                <span className="absolute cursor-pointer right-10">
+                  {arrow === actualIndex ? "▲" : "▼"}
+                </span>
+              </button>
+            </div>
+
+            <div
+              className={`panel ${
+                arrow === actualIndex ? "open" : "close"
+              } px-4 mt-2`}
+            >
+              <p className="text-gray-500 mb-2">Select the correct option:</p>
+
+              {item.options.map((option, optionIndex) => {
+                const isSelected = selected === option;
+                const isCorrect = item.answer === option;
+
+                return (
+                  <div key={optionIndex} className="flex items-center mb-1">
+                    <input
+                      type="radio"
+                      name={`question-${actualIndex}`}
+                      value={option}
+                      checked={isSelected}
+                      onChange={() =>
+                        handleOptionChange(actualIndex, option)
+                      }
+                      className="mr-2 cursor-pointer"
+                    />
+                    <label
+                      className={`cursor-pointer ${
+                        isSelected
                           ? isCorrect
                             ? "text-green-500 font-semibold"
                             : "text-red-500 font-semibold"
                           : "text-black"
-                    }`}
-                >
-                  {option}
-                </label>
-                { isSelected && (
-                  <span className={`ml-2 ${isCorrect ? "text-green-500" : "text-red-500"}`}>
-                    {isCorrect ? "✅" : "❌"}
-                  </span>
-                )}
-              </div>
-            )})}
+                      }`}
+                    >
+                      {option}
+                    </label>
+                    {isSelected && (
+                      <span className="ml-2">
+                        {isCorrect ? "✅" : "❌"}
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
 
-            {isCorrects ? <p className="text-green-400 mt-2">{item.description}</p> : null}
-
+              {selected === item.answer && (
+                <p className="text-green-400 mt-2">{item.description}</p>
+              )}
+            </div>
           </div>
-        </div>
-      )})}
+        );
+      })}
+
+      <Pagination 
+        totalPosts={data.length} 
+        postsPerPage={postPerPage} 
+        setCurrentPage={setCurrentPage}
+        currentPage= {currentPage}
+      />
     </>
   );
 }

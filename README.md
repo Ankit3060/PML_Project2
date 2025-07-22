@@ -34,3 +34,13 @@ Clone the repository
 1. cd backend
 2. Install dependencies with `npm install`
 3. Start the server with `npm run dev`
+
+
+
+## Screenshots
+
+![App Screenshot](./Frontend/src/assets/image1.png)
+
+![App Screenshot](./Frontend/src/assets/image2.png)
+
+![App Screenshot](./Frontend/src/assets/image3.png)

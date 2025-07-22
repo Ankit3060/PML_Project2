@@ -5,7 +5,7 @@
   background-color: #eee;
   color: #444;
   cursor: pointer;
-  padding: 18px;
+  padding: 38px;
   width: 100%;
   text-align: left;
   border: none;
@@ -41,4 +41,40 @@
   max-height: 0;
   transition: max-height 0.3 ease-in;
   display: none;
+}
+
+.timer{
+    margin: -10px 26px 10px 26px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    font-size: 1.2rem;
+    font-weight: 600;
+    /* color: #333; */
+    /* text-align: center; */
+    display: flex;
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.timer-text {
+    flex: 1;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.score {
+    margin-left: auto;
+    padding: 10px;
+    background-color: #d1e7dd;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #0f5132;
 }
