@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
+body{
+  background-color: rgb(214, 228, 239);
+  /* overflow: hidden; */
+}
 
 .accordion {
   background-color: #eee;
   color: #444;
   cursor: pointer;
-  padding: 38px;
+  padding: 30px;
   width: 100%;
   text-align: left;
   border: none;
@@ -77,4 +81,14 @@
     font-size: 1.2rem;
     font-weight: 500;
     color: #0f5132;
+}
+
+
+.btn{
+  background-color: rgb(43, 43, 94);
+}
+
+
+.login{
+  overflow: hidden;
 }

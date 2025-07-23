@@ -1,4 +1,5 @@
 import React from 'react'
+import { IoIosArrowBack,IoIosArrowForward  } from "react-icons/io";
 
 function Pagination({totalPosts, postsPerPage,setCurrentPage, currentPage}) {
     let pages = [];
@@ -12,11 +13,12 @@ function Pagination({totalPosts, postsPerPage,setCurrentPage, currentPage}) {
             disabled={currentPage===1}
             className='px-3 py-1 border rounded cursor-pointer bg-gray-200 hover:bg-blue-600 hover:text-white '
         >
-            ← Previous
+            <IoIosArrowBack />
+
         </button>
 
 
-        <div className='px-3 py-1 border rounded cursor-pointer bg-blue-600 text-white '>
+        <div className='px-3 py-1 border rounded bg-blue-600 text-white '>
             {currentPage}
         </div>
 
@@ -25,7 +27,8 @@ function Pagination({totalPosts, postsPerPage,setCurrentPage, currentPage}) {
             disabled={currentPage===pages.length}
             className='px-3 py-1 border rounded cursor-pointer bg-gray-200 hover:bg-blue-600 hover:text-white'
         >
-            Next →
+            <IoIosArrowForward />
+
         </button>
     </div>
   )

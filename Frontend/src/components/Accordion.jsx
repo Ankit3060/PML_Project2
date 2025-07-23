@@ -22,7 +22,7 @@ function Accordion() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/v1/exam/questions`,
+          `${import.meta.env.VITE_API_URL}/api/v1/exam/questions/react`,
           { withCredentials: true }
         );
         const questions = response.data.data;

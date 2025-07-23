@@ -44,3 +44,7 @@ Clone the repository
 ![App Screenshot](./Frontend/src/assets/image2.png)
 
 ![App Screenshot](./Frontend/src/assets/image3.png)
+
+![App Screenshot](./Frontend/src/assets/image4.png)
+
+![App Screenshot](./Frontend/src/assets/image5.png)

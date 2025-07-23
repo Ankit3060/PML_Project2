@@ -1,0 +1,38 @@
+[
+  {
+    "id": "337fba27d1cb3c6ab42a1ef99ee77d18",
+    "firstName": "Ankit",
+    "lastName": "Kumar",
+    "email": "ankit@gmail.com",
+    "phone": "9392833614",
+    "gender": "Male",
+    "password": "$2b$10$9GpNp00n8oeQPe6mXlBoS.C1ahLiluYmyL2NQHoBlGLMoAbjTFbfK",
+    "role": "Admin",
+    "createdAt": "2025-07-23T06:27:17.453Z"
+  },
+  {
+    "id": "79636c0c587ab64b5ec47e6e4727f98e",
+    "firstName": "Abhi",
+    "lastName": "Kumar",
+    "email": "abhi@gmail.com",
+    "phone": "9603182341",
+    "gender": "Male",
+    "password": "$2b$10$oymfvgXITdBDyDDOBZSqG.hZcoKp8KW37wtfxPl6s9a0A2stEdAFC",
+    "role": "User",
+    "createdAt": "2025-07-23T06:42:33.539Z",
+    "address": "NSB, Vizag, AP, 530011",
+    "dob": "2007-12-08T00:00:00.000Z",
+    "qualification": "Intermediate"
+  },
+  {
+    "id": "1189a42fabd61b931fe32e5be2b331f0",
+    "firstName": "Smrity",
+    "lastName": "Kumari",
+    "email": "smrity@gmail.com",
+    "phone": "9063477910",
+    "gender": "Female",
+    "password": "$2b$10$iiVOCDHF1HEfsz4b7QhLgeil3dbTbLgv0JavXQOBsINio7KVlBoGW",
+    "role": "User",
+    "createdAt": "2025-07-23T10:24:25.557Z"
+  }
+]

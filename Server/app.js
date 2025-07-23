@@ -3,10 +3,11 @@ import cookieParser from "cookie-parser";
 import { config } from "dotenv";
 import cors from "cors";
 import question from "./routes/questionRoutes.js";
+import userRouter from "./routes/userRoutes.js"
 
 export const app = express();
 
-config({path: "./Config/config.env"});
+config({path: "config.env"});
 
 app.use(cors({
     origin : [process.env.FRONTEND_URL],
@@ -20,3 +21,4 @@ app.use(express.json());
 
 
 app.use("/api/v1/exam",question);
+app.use("/api/v1/user", userRouter);

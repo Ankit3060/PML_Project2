@@ -1,122 +1,124 @@
-[
-  {
-    "question": "What is React primarily used for?",
-    "options": ["Database", "UI Development", "Routing", "Styling"],
-    "answer": "UI Development",
-    "description": "React is mainly used for building user interfaces in web applications."
-  },
-  {
-    "question": "Which company developed React?",
-    "options": ["Google", "Amazon", "Netflix", "Meta"],
-    "answer": "Meta",
-    "description": "React was developed by Meta (formerly Facebook) and released in 2013."
-  },
-  {
-    "question": "What hook lets you manage state?",
-    "options": ["useLoop", "useState", "useToggle", "useBind"],
-    "answer": "useState",
-    "description": "The useState hook allows functional components to manage state."
-  },
-  {
-    "question": "What returns JSX in React?",
-    "options": ["Script", "Method", "Component", "Wrapper"],
-    "answer": "Component",
-    "description": "Components in React return JSX which is rendered to the UI."
-  },
-  {
-    "question": "Which symbol is used for fragments?",
-    "options": ["<>", "{}", "()", "[]"],
-    "answer": "<>",
-    "description": "React fragments use the <> </> syntax to group elements without adding extra nodes."
-  },
-  {
-    "question": "Which hook runs after rendering?",
-    "options": ["useWatch", "useCall", "useFlow", "useEffect"],
-    "answer": "useEffect",
-    "description": "useEffect runs after the component renders and is commonly used for side effects like fetching data."
-  },
-  {
-    "question": "JSX stands for?",
-    "options": ["JSON Syntax", "JavaScript XML", "Java Source", "JS Syntax"],
-    "answer": "JavaScript XML",
-    "description": "JSX stands for JavaScript XML, a syntax extension used in React to write HTML-like code."
-  },
-  {
-    "question": "Which file contains routes in React Router?",
-    "options": ["Index.html", "Routes.jsx", "App.js", "Nav.js"],
-    "answer": "App.js",
-    "description": "Routes are usually defined inside App.js using React Router."
-  },
-  {
-    "question": "React is a...",
-    "options": ["Language", "Library", "Framework", "Compiler"],
-    "answer": "Library",
-    "description": "React is a JavaScript library for building user interfaces, not a full framework."
-  },
-  {
-    "question": "useRef is used for...",
-    "options": ["Looping", "Routing", "DOM Access", "Styling"],
-    "answer": "DOM Access",
-    "description": "useRef provides a way to access and interact with DOM elements directly."
-  },
-  {
-    "question": "Which keyword is used to export a component?",
-    "options": ["release", "export", "send", "return"],
-    "answer": "export",
-    "description": "In ES modules, 'export' is used to make a component available for import in other files."
-  },
-  {
-    "question": "What is the first method called in class component?",
-    "options": ["render", "constructor", "start", "main"],
-    "answer": "constructor",
-    "description": "The constructor is the first method called when a class component is created."
-  },
-  {
-    "question": "State is...",
-    "options": ["Fixed", "Mutable", "Readonly", "Empty"],
-    "answer": "Mutable",
-    "description": "State in React is mutable, meaning it can change over time and cause re-renders."
-  },
-  {
-    "question": "Props are...",
-    "options": ["Writeable", "Changeable", "Read-only", "Optional"],
-    "answer": "Read-only",
-    "description": "Props are read-only and passed from parent to child components."
-  },
-  {
-    "question": "What updates the UI in React?",
-    "options": ["DOM", "State", "API", "Style"],
-    "answer": "State",
-    "description": "When state changes, React re-renders the component to reflect the updated UI."
-  },
-  {
-    "question": "What creates virtual DOM?",
-    "options": ["HTML", "React", "Node", "CSS"],
-    "answer": "React",
-    "description": "React creates and maintains a virtual DOM to optimize UI rendering."
-  },
-  {
-    "question": "Which hook handles side effects?",
-    "options": ["useMemo", "useState", "useEffect", "useKey"],
-    "answer": "useEffect",
-    "description": "useEffect is used to perform side effects like API calls, DOM updates, and timers."
-  },
-  {
-    "question": "React Router enables...",
-    "options": ["Storage", "Navigation", "Rendering", "Hosting"],
-    "answer": "Navigation",
-    "description": "React Router is a library that handles navigation and routing in React apps."
-  },
-  {
-    "question": "Which keyword is used to create a function component?",
-    "options": ["render", "method", "function", "object"],
-    "answer": "function",
-    "description": "Function components are defined using the 'function' keyword in JavaScript."
-  },
-  {
-    "question": "JSX must return a...",
-    "options": ["Multiple Divs", "Single Element", "Array", "Loop"],
-    "answer": "Single Element",
-    "description": "JSX must return a single parent element, which can contain multiple child elements."
-  }
-]
+{
+  "react-questions": [
+    {
+      "question": "What is React primarily used for?",
+      "options": ["Database", "UI Development", "Routing", "Styling"],
+      "answer": "UI Development",
+      "description": "React is mainly used for building user interfaces in web applications."
+    },
+    {
+      "question": "Which company developed React?",
+      "options": ["Google", "Amazon", "Netflix", "Meta"],
+      "answer": "Meta",
+      "description": "React was developed by Meta (formerly Facebook) and released in 2013."
+    },
+    {
+      "question": "What hook lets you manage state?",
+      "options": ["useLoop", "useState", "useToggle", "useBind"],
+      "answer": "useState",
+      "description": "The useState hook allows functional components to manage state."
+    },
+    {
+      "question": "What returns JSX in React?",
+      "options": ["Script", "Method", "Component", "Wrapper"],
+      "answer": "Component",
+      "description": "Components in React return JSX which is rendered to the UI."
+    },
+    {
+      "question": "Which symbol is used for fragments?",
+      "options": ["<>", "{}", "()", "[]"],
+      "answer": "<>",
+      "description": "React fragments use the <> </> syntax to group elements without adding extra nodes."
+    },
+    {
+      "question": "Which hook runs after rendering?",
+      "options": ["useWatch", "useCall", "useFlow", "useEffect"],
+      "answer": "useEffect",
+      "description": "useEffect runs after the component renders and is commonly used for side effects like fetching data."
+    },
+    {
+      "question": "JSX stands for?",
+      "options": ["JSON Syntax", "JavaScript XML", "Java Source", "JS Syntax"],
+      "answer": "JavaScript XML",
+      "description": "JSX stands for JavaScript XML, a syntax extension used in React to write HTML-like code."
+    },
+    {
+      "question": "Which file contains routes in React Router?",
+      "options": ["Index.html", "Routes.jsx", "App.js", "Nav.js"],
+      "answer": "App.js",
+      "description": "Routes are usually defined inside App.js using React Router."
+    },
+    {
+      "question": "React is a...",
+      "options": ["Language", "Library", "Framework", "Compiler"],
+      "answer": "Library",
+      "description": "React is a JavaScript library for building user interfaces, not a full framework."
+    },
+    {
+      "question": "useRef is used for...",
+      "options": ["Looping", "Routing", "DOM Access", "Styling"],
+      "answer": "DOM Access",
+      "description": "useRef provides a way to access and interact with DOM elements directly."
+    },
+    {
+      "question": "Which keyword is used to export a component?",
+      "options": ["release", "export", "send", "return"],
+      "answer": "export",
+      "description": "In ES modules, 'export' is used to make a component available for import in other files."
+    },
+    {
+      "question": "What is the first method called in class component?",
+      "options": ["render", "constructor", "start", "main"],
+      "answer": "constructor",
+      "description": "The constructor is the first method called when a class component is created."
+    },
+    {
+      "question": "State is...",
+      "options": ["Fixed", "Mutable", "Readonly", "Empty"],
+      "answer": "Mutable",
+      "description": "State in React is mutable, meaning it can change over time and cause re-renders."
+    },
+    {
+      "question": "Props are...",
+      "options": ["Writeable", "Changeable", "Read-only", "Optional"],
+      "answer": "Read-only",
+      "description": "Props are read-only and passed from parent to child components."
+    },
+    {
+      "question": "What updates the UI in React?",
+      "options": ["DOM", "State", "API", "Style"],
+      "answer": "State",
+      "description": "When state changes, React re-renders the component to reflect the updated UI."
+    },
+    {
+      "question": "What creates virtual DOM?",
+      "options": ["HTML", "React", "Node", "CSS"],
+      "answer": "React",
+      "description": "React creates and maintains a virtual DOM to optimize UI rendering."
+    },
+    {
+      "question": "Which hook handles side effects?",
+      "options": ["useMemo", "useState", "useEffect", "useKey"],
+      "answer": "useEffect",
+      "description": "useEffect is used to perform side effects like API calls, DOM updates, and timers."
+    },
+    {
+      "question": "React Router enables...",
+      "options": ["Storage", "Navigation", "Rendering", "Hosting"],
+      "answer": "Navigation",
+      "description": "React Router is a library that handles navigation and routing in React apps."
+    },
+    {
+      "question": "Which keyword is used to create a function component?",
+      "options": ["render", "method", "function", "object"],
+      "answer": "function",
+      "description": "Function components are defined using the 'function' keyword in JavaScript."
+    },
+    {
+      "question": "JSX must return a...",
+      "options": ["Multiple Divs", "Single Element", "Array", "Loop"],
+      "answer": "Single Element",
+      "description": "JSX must return a single parent element, which can contain multiple child elements."
+    }
+  ]
+}
