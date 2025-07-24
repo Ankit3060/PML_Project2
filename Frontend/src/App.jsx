@@ -20,7 +20,7 @@ function App() {
           <Route path="/login" element={<Login />}/>
           <Route path="/signup" element={<Signup />}/>
           <Route path="/profile" element={<Dashboard />}/>
-          <Route path="/exam" element={<Exam />}/>
+          <Route path="/exam/:examType" element={<Exam />}/>
         </Routes>
         <ToastContainer position="top-center"/>
       </Router>

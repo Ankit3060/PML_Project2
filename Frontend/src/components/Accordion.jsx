@@ -3,16 +3,40 @@ import "../App.css";
 import axios from "axios";
 import { useMarks } from "../context/marksContext";
 import Pagination from "./Pagination";
+import { useAuth } from "../context/authContext";
 
-function Accordion() {
+function Accordion({ marks, setMarks, data, setData, examType }) {
   const [arrow, setArrow] = useState(null);
-  const [data, setData] = useState([]);
   const [selectedOptions, setSelectedOptions] = useState({});
-  const [marks, setMarks] = useState([]);
   const { setTotalMarks } = useMarks();
 
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(5);
+
+  const { setUser, setIsAuthenticated } = useAuth();
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/api/v1/user/me`,
+          {
+            withCredentials: true,
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        setIsAuthenticated(true);
+        setUser(response.data.user);
+      } catch (error) {
+        setIsAuthenticated(false);
+        setUser(null);
+      }
+    };
+
+    fetchUser();
+  }, []);
 
   const handleClick = (index) => {
     setArrow(arrow === index ? null : index);
@@ -22,7 +46,7 @@ function Accordion() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/v1/exam/questions/react`,
+          `${import.meta.env.VITE_API_URL}/api/v1/exam/questions/${examType}`,
           { withCredentials: true }
         );
         const questions = response.data.data;
@@ -54,10 +78,9 @@ function Accordion() {
   };
 
   useEffect(() => {
-    setTotalMarks(marks.length);
+    setTotalMarks(marks.length*4);
   }, [marks, setTotalMarks]);
 
-  
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
   const currentPosts = data.slice(firstPostIndex, lastPostIndex);
@@ -83,9 +106,8 @@ function Accordion() {
             </div>
 
             <div
-              className={`panel ${
-                arrow === actualIndex ? "open" : "close"
-              } px-4 mt-2`}
+              className={`panel ${arrow === actualIndex ? "open" : "close"
+                } px-4 mt-2`}
             >
               <p className="text-gray-500 mb-2">Select the correct option:</p>
 
@@ -100,26 +122,21 @@ function Accordion() {
                       name={`question-${actualIndex}`}
                       value={option}
                       checked={isSelected}
-                      onChange={() =>
-                        handleOptionChange(actualIndex, option)
-                      }
+                      onChange={() => handleOptionChange(actualIndex, option)}
                       className="mr-2 cursor-pointer"
                     />
                     <label
-                      className={`cursor-pointer ${
-                        isSelected
-                          ? isCorrect
-                            ? "text-green-500 font-semibold"
-                            : "text-red-500 font-semibold"
-                          : "text-black"
-                      }`}
+                      className={`cursor-pointer ${isSelected
+                        ? isCorrect
+                          ? "text-green-500 font-semibold"
+                          : "text-red-500 font-semibold"
+                        : "text-black"
+                        }`}
                     >
                       {option}
                     </label>
                     {isSelected && (
-                      <span className="ml-2">
-                        {isCorrect ? "✅" : "❌"}
-                      </span>
+                      <span className="ml-2">{isCorrect ? "✅" : "❌"}</span>
                     )}
                   </div>
                 );
@@ -133,11 +150,11 @@ function Accordion() {
         );
       })}
 
-      <Pagination 
-        totalPosts={data.length} 
-        postsPerPage={postPerPage} 
+      <Pagination
+        totalPosts={data.length}
+        postsPerPage={postPerPage}
         setCurrentPage={setCurrentPage}
-        currentPage= {currentPage}
+        currentPage={currentPage}
       />
     </>
   );

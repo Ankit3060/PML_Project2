@@ -120,5 +120,101 @@
       "answer": "Single Element",
       "description": "JSX must return a single parent element, which can contain multiple child elements."
     }
-  ]
+  ],
+"javascript-questions": [
+  {
+    "question": "Which keyword declares a variable in JavaScript?",
+    "options": ["int", "let", "define", "varset"],
+    "answer": "let",
+    "description": "JavaScript supports 'var', 'let', and 'const' for declaring variables, with 'let' being block-scoped."
+  },
+  {
+    "question": "What is the output of `typeof null`?",
+    "options": ["null", "object", "undefined", "boolean"],
+    "answer": "object",
+    "description": "`typeof null` is a long-standing bug in JavaScript — it returns 'object'."
+  },
+  {
+    "question": "Which symbol is used for comments in JavaScript?",
+    "options": ["<!--", "//", "#", "/*--*/"],
+    "answer": "//",
+    "description": "Single-line comments use `//`, while block comments use `/* */`."
+  },
+  {
+    "question": "Which method converts JSON text to JavaScript object?",
+    "options": ["JSON.stringify", "JSON.decode", "JSON.parse", "JSON.objectify"],
+    "answer": "JSON.parse",
+    "description": "`JSON.parse()` is used to convert a JSON string into a JavaScript object."
+  },
+  {
+    "question": "What does `NaN` stand for?",
+    "options": ["Not a Null", "Not a Node", "Not a Number", "Null and None"],
+    "answer": "Not a Number",
+    "description": "NaN means 'Not a Number', and it's returned when math operations fail."
+  }
+],
+"html-questions": [
+  {
+    "question": "What does HTML stand for?",
+    "options": ["Hyper Trainer Markup Language", "Hyper Text Markup Language", "High Text Markup Language", "Hyper Tool Markup Language"],
+    "answer": "Hyper Text Markup Language",
+    "description": "HTML stands for Hyper Text Markup Language and is used to structure web content."
+  },
+  {
+    "question": "Which tag is used for inserting images?",
+    "options": ["<img>", "<src>", "<image>", "<pic>"],
+    "answer": "<img>",
+    "description": "The `<img>` tag is used to embed images in an HTML page."
+  },
+  {
+    "question": "Which tag creates a line break?",
+    "options": ["<lb>", "<break>", "<br>", "<line>"],
+    "answer": "<br>",
+    "description": "The `<br>` tag inserts a single line break without needing a closing tag."
+  },
+  {
+    "question": "Which tag defines a hyperlink?",
+    "options": ["<a>", "<link>", "<href>", "<hyper>"],
+    "answer": "<a>",
+    "description": "`<a>` is used for links, with the `href` attribute pointing to the destination."
+  },
+  {
+    "question": "Which element contains metadata about the document?",
+    "options": ["<body>", "<meta>", "<head>", "<header>"],
+    "answer": "<head>",
+    "description": "The `<head>` tag contains metadata like title, charset, and linked resources."
+  }
+],
+"css-questions": [
+  {
+    "question": "What does CSS stand for?",
+    "options": ["Creative Style Sheet", "Colorful Style Sheet", "Cascading Style Sheets", "Computer Style Sheet"],
+    "answer": "Cascading Style Sheets",
+    "description": "CSS stands for Cascading Style Sheets and is used to style HTML elements."
+  },
+  {
+    "question": "Which symbol is used to select an ID in CSS?",
+    "options": ["#", ".", "*", "$"],
+    "answer": "#",
+    "description": "`#id` is the syntax to select an element by its ID in CSS."
+  },
+  {
+    "question": "Which property changes text color?",
+    "options": ["background-color", "text-color", "font-color", "color"],
+    "answer": "color",
+    "description": "The `color` property changes the color of the text."
+  },
+  {
+    "question": "Which CSS position makes an element follow scroll?",
+    "options": ["relative", "static", "sticky", "fixed"],
+    "answer": "sticky",
+    "description": "Sticky elements stay within the viewport after crossing a threshold while scrolling."
+  },
+  {
+    "question": "How do you select all `<p>` elements inside a `<div>`?",
+    "options": ["div + p", "div p", "div > p", "div.p"],
+    "answer": "div p",
+    "description": "`div p` selects all `<p>` tags that are descendants of a `<div>`."
+  }
+]
 }

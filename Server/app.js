@@ -4,6 +4,7 @@ import { config } from "dotenv";
 import cors from "cors";
 import question from "./routes/questionRoutes.js";
 import userRouter from "./routes/userRoutes.js"
+import examDataRouter from "./routes/examDataRoutes.js"
 
 export const app = express();
 
@@ -22,3 +23,4 @@ app.use(express.json());
 
 app.use("/api/v1/exam",question);
 app.use("/api/v1/user", userRouter);
+app.use("/api/v1/exam/data",examDataRouter)

@@ -1,0 +1,182 @@
+[
+  {
+    "id": "4d556575-9b4e-40d9-a911-7ff5dc63bdc3",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "react",
+    "marks": 2,
+    "totalQuestions": 20,
+    "percentage": "10.00",
+    "timestamp": "2025-07-24T05:42:07.072Z"
+  },
+  {
+    "id": "a12451c8-abfd-4db4-a619-5bb943fd7c96",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "react",
+    "marks": 4,
+    "totalQuestions": 20,
+    "percentage": "20.00",
+    "timestamp": "2025-07-24T05:42:52.858Z"
+  },
+  {
+    "id": "8cb1e0f1-ae67-4e25-be28-66202fbc7cd6",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "react",
+    "marks": 9,
+    "totalQuestions": 20,
+    "percentage": "45.00",
+    "timestamp": "2025-07-24T05:46:18.471Z"
+  },
+  {
+    "id": "c831e0df-730e-47ee-804f-25c0b11d6d0b",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "react",
+    "marks": 19,
+    "totalQuestions": 20,
+    "percentage": "95.00",
+    "timestamp": "2025-07-24T05:48:49.388Z"
+  },
+  {
+    "id": "2e711391-5bd8-40b8-b827-cbeda4e5a29f",
+    "userId": "1189a42fabd61b931fe32e5be2b331f0",
+    "examType": "react",
+    "marks": 7,
+    "totalQuestions": 20,
+    "percentage": "35.00",
+    "timestamp": "2025-07-24T06:25:18.962Z"
+  },
+  {
+    "id": "2d35d7ca-1c80-4c07-b4a5-2531fff53eed",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "react",
+    "marks": 0,
+    "totalQuestions": 20,
+    "percentage": "0.00",
+    "timestamp": "2025-07-24T07:05:18.962Z"
+  },
+  {
+    "id": "2d35d7ca-1c80-4c07-b4a5-2531fff53effd",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "javascript",
+    "marks": 0,
+    "totalQuestions": 20,
+    "percentage": "0.00",
+    "timestamp": "2025-07-24T07:05:18.962Z"
+  },
+  {
+    "id": "2d35d7ca-1c80-4c07-b4a5-2531fff53effd",
+    "userId": "1189a42fabd61b931fe32e5be2b331f0",
+    "examType": "javascript",
+    "marks": 10,
+    "totalQuestions": 20,
+    "percentage": "50.00",
+    "timestamp": "2025-07-24T07:05:18.962Z"
+  },
+  {
+    "id": "620be1d0-c893-4b9c-a1b1-8058aa224208",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "react",
+    "marks": 1,
+    "totalQuestions": 20,
+    "percentage": "5.00",
+    "timestamp": "2025-07-24T11:03:34.199Z"
+  },
+  {
+    "id": "46686ad5-095b-4641-a3ea-c28745dd136d",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "javascript",
+    "marks": 5,
+    "totalQuestions": 5,
+    "percentage": "100.00",
+    "timestamp": "2025-07-24T11:45:12.630Z"
+  },
+  {
+    "id": "c93c9ffc-7b8b-4edb-8920-085445b99f0b",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "css",
+    "marks": 5,
+    "totalQuestions": 5,
+    "percentage": "100.00",
+    "timestamp": "2025-07-24T11:47:52.371Z"
+  },
+  {
+    "id": "2bc10d38-5f00-48a4-8ec8-79cd94774c4b",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "html",
+    "marks": 5,
+    "totalQuestions": 5,
+    "percentage": "100.00",
+    "timestamp": "2025-07-24T11:49:12.746Z"
+  },
+  {
+    "id": "7b34bb90-1b31-4bb2-b738-c843a5b6154b",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "javascript",
+    "marks": 0,
+    "totalQuestions": 5,
+    "percentage": "0.00",
+    "timestamp": "2025-07-24T12:20:00.270Z"
+  },
+  {
+    "id": "59419df6-a8cb-4de7-8ef4-6204b4203848",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "react",
+    "marks": 20,
+    "totalQuestions": 20,
+    "percentage": "100.00",
+    "timestamp": "2025-07-24T12:32:10.247Z"
+  },
+  {
+    "id": "13dc190b-5419-4279-be71-5a2299cbb537",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "javascript",
+    "marks": 12,
+    "totalQuestions": 5,
+    "percentage": "60.00",
+    "timestamp": "2025-07-24T12:33:11.467Z"
+  },
+  {
+    "id": "5d4abe61-58a5-4cd7-b994-37f633bdf623",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "html",
+    "marks": 16,
+    "totalQuestions": 5,
+    "percentage": "80.00",
+    "timestamp": "2025-07-24T12:33:37.662Z"
+  },
+  {
+    "id": "eea9df87-7602-4cb1-8786-4b8d10cb3379",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "css",
+    "marks": 8,
+    "totalQuestions": 5,
+    "percentage": "40.00",
+    "timestamp": "2025-07-24T12:33:53.883Z"
+  },
+  {
+    "id": "34401c4b-7eee-4d4d-be7e-de8fecdd950b",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "css",
+    "marks": 12,
+    "totalQuestions": 5,
+    "percentage": "60.00",
+    "timestamp": "2025-07-24T12:44:25.398Z"
+  },
+  {
+    "id": "21f2a161-b574-4ab1-b267-4a94fbfcece7",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "javascript",
+    "marks": 12,
+    "totalQuestions": 5,
+    "percentage": "60.00",
+    "timestamp": "2025-07-24T12:45:30.951Z"
+  },
+  {
+    "id": "89028b7f-8163-40b7-bc30-20b050b5e5be",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "react",
+    "marks": 40,
+    "totalQuestions": 20,
+    "percentage": "50.00",
+    "timestamp": "2025-07-24T12:50:26.296Z"
+  }
+]
