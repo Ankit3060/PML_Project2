@@ -4,12 +4,19 @@ import { useAuth } from "../context/authContext";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { FaUserLarge } from "react-icons/fa6";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const { user, setUser, setIsAuthenticated, isAuthenticated } = useAuth();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
+  const location = useLocation();
+  const hiddenPaths = ["/exam/react"];
+
+  // if (hiddenPaths.includes(location.pathname)) {
+  //   return null; // Hide Navbar for specific paths
+  // }
   const toggleDropdown = () => {
     setDropdownOpen((prev) => !prev);
   };

@@ -21,9 +21,9 @@ const writeExam = (exam) => {
 
 export const saveMarks = (req, res) => {
   try {
-    const { userId, marks, totalQuestions, examType } = req.body;
+    const { userId, marks, totalQuestions, examType, answer } = req.body;
 
-    if (!userId || marks == null || !totalQuestions || !examType) {
+    if (!userId || marks == null || !totalQuestions || !examType || !answer) {
       return res.status(400).json({ success: false, message: "Missing required fields" });
     }
 
@@ -35,6 +35,7 @@ export const saveMarks = (req, res) => {
       examType,
       marks,
       totalQuestions,
+      answer,
       percentage: ((marks / (totalQuestions*4)) * 100).toFixed(2),
       timestamp: new Date().toISOString()
     };  
@@ -72,3 +73,25 @@ export const getUserMarks = (req, res) => {
     res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 };
+
+
+
+export const previewExamPaper = (req, res)=>{
+  try {
+    const {examId} = req.params;
+
+    const allExamResults = readExam();
+    const examPaper = allExamResults.find(result => result.id === examId);
+    if (!examPaper) {
+      return res.status(404).json({ success: false, message: "Exam paper not found" });
+    }
+    res.status(200).json({
+      success: true,
+      message: "Exam paper fetched successfully",
+      data: examPaper
+    });
+  } catch (error) {
+    console.error("previewExamPaper error:", error);
+    res.status(500).json({ success: false, message: "Internal Server Error" });
+  }
+}

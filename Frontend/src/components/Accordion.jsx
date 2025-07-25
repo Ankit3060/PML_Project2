@@ -5,7 +5,7 @@ import { useMarks } from "../context/marksContext";
 import Pagination from "./Pagination";
 import { useAuth } from "../context/authContext";
 
-function Accordion({ marks, setMarks, data, setData, examType }) {
+function Accordion({ marks, setMarks, data, setData, examType, setAnswers, answers }) {
   const [arrow, setArrow] = useState(null);
   const [selectedOptions, setSelectedOptions] = useState({});
   const { setTotalMarks } = useMarks();
@@ -84,6 +84,17 @@ function Accordion({ marks, setMarks, data, setData, examType }) {
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
   const currentPosts = data.slice(firstPostIndex, lastPostIndex);
+
+  // setAnswers((prev) => {
+  //   const newAnswers = [...prev];
+  //   currentPosts.forEach((item, index) => {
+  //     newAnswers[firstPostIndex + index] = selectedOptions[firstPostIndex + index] || "";
+  //   });
+  //   return newAnswers;
+  // });
+  // console.log(setAnswers);
+  // setAnswers(setSelectedOptions);
+  // console.log(setAnswers)
 
   return (
     <>

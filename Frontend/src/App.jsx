@@ -8,6 +8,7 @@ import Signup from "./Pages/Signup";
 import Navbar from "./components/Navbar";
 import { ToastContainer } from "react-toastify";
 import Dashboard from "./Pages/Profile";
+import ViewPaper from "./components/viewPaper";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/signup" element={<Signup />}/>
           <Route path="/profile" element={<Dashboard />}/>
           <Route path="/exam/:examType" element={<Exam />}/>
+          <Route path="/view-paper/:examId" element={<ViewPaper />} />
         </Routes>
         <ToastContainer position="top-center"/>
       </Router>

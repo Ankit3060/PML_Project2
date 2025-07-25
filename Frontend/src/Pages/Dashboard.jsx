@@ -36,13 +36,16 @@ const Dashboard = ({ examType }) => {
           totalMarks: item.totalQuestions*4,
           obtainMarks: item.marks,
           percentage : item.percentage,
-          date: item.timestamp ? item.timestamp.split('T')[0] : '',
-        }))
+          date: item.timestamp
+            ? new Date(item.timestamp).toLocaleString("en-IN", { dateStyle: "short", timeStyle: "short" })
+            : "",
+        }));
         setData(formattedData);
         setLoading(false);
       } catch (error) {
         toast.error("Failed to fetch data");
         // navigate("/login");
+        setData([]);
         setLoading(false);
       }
     };
@@ -52,7 +55,11 @@ const Dashboard = ({ examType }) => {
 
 
   const CustomButtonComponent = (params) => {
-    const handleView = () => { };
+    const handleView = () => {
+      navigate(`/view-paper/${params.data.id}`);
+      // navigate("/view-paper")
+      // navigate("/view-paper", { state: { examId: params.data.id } });
+    };
 
     return (
       <div className="flex gap-2">
@@ -67,12 +74,12 @@ const Dashboard = ({ examType }) => {
   };
   const columns = [
     { field: "id", headerName: "Exam ID", width: 90 },
-    { field: "totalQuestions", headerName: "Total Questions", width: 140 },
-    { field: "attemptedQuestions", headerName: "Attempted Questions", width: 140 },
-    { field: "totalMarks", headerName: "Total Marks", width: 120 },
-    { field: "obtainMarks", headerName: "Obtain Marks", width: 130 },
-    { field: "date", headerName: "Date", width: 140 },
-    { field: "percentage", headerName: "Percentage", width: 130 },
+    { field: "totalQuestions", headerName: "Total Questions", width: 131 },
+    { field: "attemptedQuestions", headerName: "Attempted Questions", width: 168 },
+    { field: "totalMarks", headerName: "Total Marks", width: 110 },
+    { field: "obtainMarks", headerName: "Obtain Marks", width: 120 },
+    { field: "percentage", headerName: "Percentage", width: 103 },
+    { field: "date", headerName: "Date", width: 170 },
     { field: "actions", headerName: "Actions", cellRenderer: CustomButtonComponent, width: 100 },
   ];
 
@@ -84,7 +91,8 @@ const Dashboard = ({ examType }) => {
     <>
       <div className='flex justify-between items-center p-4'>
         <button
-          className='cursor-pointer right-18 absolute float-right text-xl hover:text-blue-500 mr-[70px]'
+          className='cursor-pointer right-18 absolute float-right text-xl
+                    hover:bg-blue-500 text-white mr-[70px] bg-blue-400 rounded-lg px-4 py-2'
           onClick={() => navigate(`/exam/${examType}`)}>
           Take Quiz
         </button>

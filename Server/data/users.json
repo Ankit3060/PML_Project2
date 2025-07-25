@@ -34,5 +34,16 @@
     "password": "$2b$10$iiVOCDHF1HEfsz4b7QhLgeil3dbTbLgv0JavXQOBsINio7KVlBoGW",
     "role": "User",
     "createdAt": "2025-07-23T10:24:25.557Z"
+  },
+  {
+    "id": "5a4ecbf670e6f54f5e741fb48b9d5c55",
+    "firstName": "Ram",
+    "lastName": "Kumar",
+    "email": "ram@gmail.com",
+    "phone": "8847624737",
+    "gender": "Male",
+    "password": "$2b$10$N2bKsHinEdvcFdPqL6E8aOogPf/5vNfLsoMeENY.lCcC7KfHO5512",
+    "role": "User",
+    "createdAt": "2025-07-25T06:14:51.620Z"
   }
 ]
