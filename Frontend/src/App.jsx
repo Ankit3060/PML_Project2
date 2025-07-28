@@ -7,8 +7,10 @@ import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Navbar from "./components/Navbar";
 import { ToastContainer } from "react-toastify";
-import Dashboard from "./Pages/Profile";
+import Profile from "./Pages/Profile";
 import ViewPaper from "./components/viewPaper";
+import Dashboard from "./Pages/Dashboard";
+import ExamSidebar from "./components/ExamSidebar";
 
 function App() {
 
@@ -16,15 +18,27 @@ function App() {
     <>
       <Router>
         <Navbar />
+        <ExamSidebar />
         <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/login" element={<Login />}/>
-          <Route path="/signup" element={<Signup />}/>
-          <Route path="/profile" element={<Dashboard />}/>
-          <Route path="/exam/:examType" element={<Exam />}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/exam/:examType" element={<Exam />} />
+          <Route path="/dashboard/:examType" element={<Dashboard />} />
           <Route path="/view-paper/:examId" element={<ViewPaper />} />
         </Routes>
-        <ToastContainer position="top-center"/>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={true}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored" />
       </Router>
     </>
   );

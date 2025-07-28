@@ -7,24 +7,25 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const usersFilePath = path.join(__dirname, "../data/examData.json");
 
-
 const readExam = () => {
-    if (!fs.existsSync(usersFilePath)) return [];
-    const data = fs.readFileSync(usersFilePath);
-    return JSON.parse(data);
+  if (!fs.existsSync(usersFilePath)) return [];
+  const data = fs.readFileSync(usersFilePath);
+  return JSON.parse(data);
 };
 
 const writeExam = (exam) => {
-    fs.writeFileSync(usersFilePath, JSON.stringify(exam, null, 2));
+  fs.writeFileSync(usersFilePath, JSON.stringify(exam, null, 2));
 };
 
 
 export const saveMarks = (req, res) => {
   try {
-    const { userId, marks, totalQuestions, examType, answer } = req.body;
+    const { userId, marks, totalQuestions, examType, questions } = req.body;
 
-    if (!userId || marks == null || !totalQuestions || !examType || !answer) {
-      return res.status(400).json({ success: false, message: "Missing required fields" });
+    if (!userId || marks == null || !totalQuestions || !examType || !questions) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Missing required fields" });
     }
 
     const allExamResults = readExam();
@@ -35,15 +36,26 @@ export const saveMarks = (req, res) => {
       examType,
       marks,
       totalQuestions,
-      answer,
-      percentage: ((marks / (totalQuestions*4)) * 100).toFixed(2),
-      timestamp: new Date().toISOString()
-    };  
+      percentage: ((marks / (totalQuestions * 4)) * 100).toFixed(2),
+      timestamp: new Date().toISOString(),
+      questions: questions.map((q) => ({
+        questionId: q.questionId,
+        question: q.questionText,
+        options: q.options,
+        selectedAnswer: q.selectedAnswer,
+        correctAnswer: q.correctAnswer,
+        isCorrect: q.isCorrect,
+      })),
+    };
 
     allExamResults.push(newResult);
     writeExam(allExamResults);
 
-    res.status(200).json({ success: true, message: "Marks saved successfully", data: newResult });
+    res.status(200).json({
+      success: true,
+      message: "Marks saved successfully",
+      data: newResult,
+    });
   } catch (error) {
     res.status(500).json({ success: false, message: "Internal Server Error" });
   }
@@ -55,18 +67,21 @@ export const getUserMarks = (req, res) => {
     const { id, examType } = req.params;
 
     const allExamResults = readExam();
-    const userResults = allExamResults.filter(result =>
-      result.userId === id && result.examType === examType
+    const userResults = allExamResults.filter(
+      (result) => result.userId === id && result.examType === examType
     );
 
     if (userResults.length === 0) {
-      return res.status(404).json({ success: false, message: "No results found for this user and exam type" });
+      return res.status(404).json({
+        success: false,
+        message: "No results found for this user and exam type",
+      });
     }
 
     res.status(200).json({
       success: true,
       message: "User marks fetched successfully",
-      data: userResults
+      data: userResults,
     });
   } catch (error) {
     console.error("getUserMarks error:", error);
@@ -75,23 +90,24 @@ export const getUserMarks = (req, res) => {
 };
 
 
-
-export const previewExamPaper = (req, res)=>{
+export const previewExamPaper = (req, res) => {
   try {
-    const {examId} = req.params;
+    const { examId } = req.params;
 
     const allExamResults = readExam();
-    const examPaper = allExamResults.find(result => result.id === examId);
+    const examPaper = allExamResults.find((result) => result.id === examId);
     if (!examPaper) {
-      return res.status(404).json({ success: false, message: "Exam paper not found" });
+      return res
+        .status(404)
+        .json({ success: false, message: "Exam paper not found" });
     }
     res.status(200).json({
       success: true,
       message: "Exam paper fetched successfully",
-      data: examPaper
+      data: examPaper,
     });
   } catch (error) {
     console.error("previewExamPaper error:", error);
     res.status(500).json({ success: false, message: "Internal Server Error" });
   }
-}
+};

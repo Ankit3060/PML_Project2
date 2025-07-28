@@ -92,3 +92,11 @@ body{
 .login{
   overflow: hidden;
 }
+
+
+.exam-container {
+  padding: 20px;
+  min-height: calc(100vh - 80px);
+  margin-left: 15rem;
+  overflow-y: hidden;
+}

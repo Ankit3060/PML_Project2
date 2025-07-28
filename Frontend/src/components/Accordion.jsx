@@ -5,7 +5,7 @@ import { useMarks } from "../context/marksContext";
 import Pagination from "./Pagination";
 import { useAuth } from "../context/authContext";
 
-function Accordion({ marks, setMarks, data, setData, examType, setAnswers, answers }) {
+function Accordion({ marks, setMarks, data, setData, examType, setAnswers }) {
   const [arrow, setArrow] = useState(null);
   const [selectedOptions, setSelectedOptions] = useState({});
   const { setTotalMarks } = useMarks();
@@ -75,7 +75,22 @@ function Accordion({ marks, setMarks, data, setData, examType, setAnswers, answe
     } else {
       setMarks((prev) => prev.filter((index) => index !== questionIndex));
     }
+    setAnswers((prev) => {
+    const updated = prev.filter((ans) => ans.questionId !== question.id);
+    return [
+      ...updated,
+      {
+        questionId: question.id,
+        questionText: question.question,
+        options: question.options,
+        selectedAnswer: selectedValue,
+        correctAnswer: question.answer,
+        isCorrect: question.answer === selectedValue,
+      },
+    ];
+  });
   };
+
 
   useEffect(() => {
     setTotalMarks(marks.length*4);
@@ -84,17 +99,6 @@ function Accordion({ marks, setMarks, data, setData, examType, setAnswers, answe
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
   const currentPosts = data.slice(firstPostIndex, lastPostIndex);
-
-  // setAnswers((prev) => {
-  //   const newAnswers = [...prev];
-  //   currentPosts.forEach((item, index) => {
-  //     newAnswers[firstPostIndex + index] = selectedOptions[firstPostIndex + index] || "";
-  //   });
-  //   return newAnswers;
-  // });
-  // console.log(setAnswers);
-  // setAnswers(setSelectedOptions);
-  // console.log(setAnswers)
 
   return (
     <>
@@ -110,7 +114,7 @@ function Accordion({ marks, setMarks, data, setData, examType, setAnswers, answe
                 onClick={() => handleClick(actualIndex)}
               >
                 {item.question}
-                <span className="absolute cursor-pointer right-10">
+                <span className="absolute cursor-pointer right-15">
                   {arrow === actualIndex ? "▲" : "▼"}
                 </span>
               </button>

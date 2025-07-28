@@ -29,16 +29,30 @@ function Exam() {
     setIsSubmitting(true);
 
     try {
+      const payload = {
+        userId: user.id,
+        examType: examType,
+        marks: marks.length * 4,
+        totalQuestions: data.length,
+        questions: answers.map((item) => ({
+          questionId: item.questionId,
+          questionText: item.questionText,
+          options: item.options,
+          selectedAnswer: item.selectedAnswer ?? null,
+          correctAnswer: item.correctAnswer,
+          isCorrect: item.selectedAnswer === item.correctAnswer,
+        })),
+      };
+
       await axios.post(
         `${import.meta.env.VITE_API_URL}/api/v1/exam/data/save-marks`,
+        payload,
         {
-          userId: user.id,
-          examType: examType,
-          marks: marks.length * 4,
-          totalQuestions: data.length,
-          answer: answers
-        },
-        { withCredentials: true }
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
 
       toast.success("Exam submitted successfully");
@@ -72,10 +86,11 @@ function Exam() {
 
   return (
     <>
-      <div>
+      <div className="exam-container">
         <div className="timer">
           <div className="timer-text">
-            Timer {minutes}:{remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds}
+            Timer {minutes}:
+            {remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds}
           </div>
           <div className="score">Score: {totalMarks}</div>
         </div>

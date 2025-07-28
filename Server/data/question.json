@@ -1,220 +1,255 @@
 {
   "react-questions": [
     {
+      "id": "react-1",
       "question": "What is React primarily used for?",
       "options": ["Database", "UI Development", "Routing", "Styling"],
       "answer": "UI Development",
       "description": "React is mainly used for building user interfaces in web applications."
     },
     {
+      "id": "react-2",
       "question": "Which company developed React?",
       "options": ["Google", "Amazon", "Netflix", "Meta"],
       "answer": "Meta",
       "description": "React was developed by Meta (formerly Facebook) and released in 2013."
     },
     {
+      "id": "react-3",
       "question": "What hook lets you manage state?",
       "options": ["useLoop", "useState", "useToggle", "useBind"],
       "answer": "useState",
       "description": "The useState hook allows functional components to manage state."
     },
     {
+      "id": "react-4",
       "question": "What returns JSX in React?",
       "options": ["Script", "Method", "Component", "Wrapper"],
       "answer": "Component",
       "description": "Components in React return JSX which is rendered to the UI."
     },
     {
+      "id": "react-5",
       "question": "Which symbol is used for fragments?",
       "options": ["<>", "{}", "()", "[]"],
       "answer": "<>",
       "description": "React fragments use the <> </> syntax to group elements without adding extra nodes."
     },
     {
+      "id": "react-6",
       "question": "Which hook runs after rendering?",
       "options": ["useWatch", "useCall", "useFlow", "useEffect"],
       "answer": "useEffect",
       "description": "useEffect runs after the component renders and is commonly used for side effects like fetching data."
     },
     {
+      "id": "react-7",
       "question": "JSX stands for?",
       "options": ["JSON Syntax", "JavaScript XML", "Java Source", "JS Syntax"],
       "answer": "JavaScript XML",
       "description": "JSX stands for JavaScript XML, a syntax extension used in React to write HTML-like code."
     },
     {
+      "id": "react-8",
       "question": "Which file contains routes in React Router?",
       "options": ["Index.html", "Routes.jsx", "App.js", "Nav.js"],
       "answer": "App.js",
       "description": "Routes are usually defined inside App.js using React Router."
     },
     {
+      "id": "react-9",
       "question": "React is a...",
       "options": ["Language", "Library", "Framework", "Compiler"],
       "answer": "Library",
       "description": "React is a JavaScript library for building user interfaces, not a full framework."
     },
     {
+      "id": "react-10",
       "question": "useRef is used for...",
       "options": ["Looping", "Routing", "DOM Access", "Styling"],
       "answer": "DOM Access",
       "description": "useRef provides a way to access and interact with DOM elements directly."
     },
     {
+      "id": "react-11",
       "question": "Which keyword is used to export a component?",
       "options": ["release", "export", "send", "return"],
       "answer": "export",
       "description": "In ES modules, 'export' is used to make a component available for import in other files."
     },
     {
+      "id": "react-12",
       "question": "What is the first method called in class component?",
       "options": ["render", "constructor", "start", "main"],
       "answer": "constructor",
       "description": "The constructor is the first method called when a class component is created."
     },
     {
+      "id": "react-13",
       "question": "State is...",
       "options": ["Fixed", "Mutable", "Readonly", "Empty"],
       "answer": "Mutable",
       "description": "State in React is mutable, meaning it can change over time and cause re-renders."
     },
     {
+      "id": "react-14",
       "question": "Props are...",
       "options": ["Writeable", "Changeable", "Read-only", "Optional"],
       "answer": "Read-only",
       "description": "Props are read-only and passed from parent to child components."
     },
     {
+      "id": "react-15",
       "question": "What updates the UI in React?",
       "options": ["DOM", "State", "API", "Style"],
       "answer": "State",
       "description": "When state changes, React re-renders the component to reflect the updated UI."
     },
     {
+      "id": "react-16",
       "question": "What creates virtual DOM?",
       "options": ["HTML", "React", "Node", "CSS"],
       "answer": "React",
       "description": "React creates and maintains a virtual DOM to optimize UI rendering."
     },
     {
+      "id": "react-17",
       "question": "Which hook handles side effects?",
       "options": ["useMemo", "useState", "useEffect", "useKey"],
       "answer": "useEffect",
       "description": "useEffect is used to perform side effects like API calls, DOM updates, and timers."
     },
     {
+      "id": "react-18",
       "question": "React Router enables...",
       "options": ["Storage", "Navigation", "Rendering", "Hosting"],
       "answer": "Navigation",
       "description": "React Router is a library that handles navigation and routing in React apps."
     },
     {
+      "id": "react-19",
       "question": "Which keyword is used to create a function component?",
       "options": ["render", "method", "function", "object"],
       "answer": "function",
       "description": "Function components are defined using the 'function' keyword in JavaScript."
     },
     {
+      "id": "react-20",
       "question": "JSX must return a...",
       "options": ["Multiple Divs", "Single Element", "Array", "Loop"],
       "answer": "Single Element",
       "description": "JSX must return a single parent element, which can contain multiple child elements."
     }
   ],
-"javascript-questions": [
-  {
-    "question": "Which keyword declares a variable in JavaScript?",
-    "options": ["int", "let", "define", "varset"],
-    "answer": "let",
-    "description": "JavaScript supports 'var', 'let', and 'const' for declaring variables, with 'let' being block-scoped."
-  },
-  {
-    "question": "What is the output of `typeof null`?",
-    "options": ["null", "object", "undefined", "boolean"],
-    "answer": "object",
-    "description": "`typeof null` is a long-standing bug in JavaScript — it returns 'object'."
-  },
-  {
-    "question": "Which symbol is used for comments in JavaScript?",
-    "options": ["<!--", "//", "#", "/*--*/"],
-    "answer": "//",
-    "description": "Single-line comments use `//`, while block comments use `/* */`."
-  },
-  {
-    "question": "Which method converts JSON text to JavaScript object?",
-    "options": ["JSON.stringify", "JSON.decode", "JSON.parse", "JSON.objectify"],
-    "answer": "JSON.parse",
-    "description": "`JSON.parse()` is used to convert a JSON string into a JavaScript object."
-  },
-  {
-    "question": "What does `NaN` stand for?",
-    "options": ["Not a Null", "Not a Node", "Not a Number", "Null and None"],
-    "answer": "Not a Number",
-    "description": "NaN means 'Not a Number', and it's returned when math operations fail."
-  }
-],
-"html-questions": [
-  {
-    "question": "What does HTML stand for?",
-    "options": ["Hyper Trainer Markup Language", "Hyper Text Markup Language", "High Text Markup Language", "Hyper Tool Markup Language"],
-    "answer": "Hyper Text Markup Language",
-    "description": "HTML stands for Hyper Text Markup Language and is used to structure web content."
-  },
-  {
-    "question": "Which tag is used for inserting images?",
-    "options": ["<img>", "<src>", "<image>", "<pic>"],
-    "answer": "<img>",
-    "description": "The `<img>` tag is used to embed images in an HTML page."
-  },
-  {
-    "question": "Which tag creates a line break?",
-    "options": ["<lb>", "<break>", "<br>", "<line>"],
-    "answer": "<br>",
-    "description": "The `<br>` tag inserts a single line break without needing a closing tag."
-  },
-  {
-    "question": "Which tag defines a hyperlink?",
-    "options": ["<a>", "<link>", "<href>", "<hyper>"],
-    "answer": "<a>",
-    "description": "`<a>` is used for links, with the `href` attribute pointing to the destination."
-  },
-  {
-    "question": "Which element contains metadata about the document?",
-    "options": ["<body>", "<meta>", "<head>", "<header>"],
-    "answer": "<head>",
-    "description": "The `<head>` tag contains metadata like title, charset, and linked resources."
-  }
-],
-"css-questions": [
-  {
-    "question": "What does CSS stand for?",
-    "options": ["Creative Style Sheet", "Colorful Style Sheet", "Cascading Style Sheets", "Computer Style Sheet"],
-    "answer": "Cascading Style Sheets",
-    "description": "CSS stands for Cascading Style Sheets and is used to style HTML elements."
-  },
-  {
-    "question": "Which symbol is used to select an ID in CSS?",
-    "options": ["#", ".", "*", "$"],
-    "answer": "#",
-    "description": "`#id` is the syntax to select an element by its ID in CSS."
-  },
-  {
-    "question": "Which property changes text color?",
-    "options": ["background-color", "text-color", "font-color", "color"],
-    "answer": "color",
-    "description": "The `color` property changes the color of the text."
-  },
-  {
-    "question": "Which CSS position makes an element follow scroll?",
-    "options": ["relative", "static", "sticky", "fixed"],
-    "answer": "sticky",
-    "description": "Sticky elements stay within the viewport after crossing a threshold while scrolling."
-  },
-  {
-    "question": "How do you select all `<p>` elements inside a `<div>`?",
-    "options": ["div + p", "div p", "div > p", "div.p"],
-    "answer": "div p",
-    "description": "`div p` selects all `<p>` tags that are descendants of a `<div>`."
-  }
-]
+  "javascript-questions": [
+    {
+      "id": "js-1",
+      "question": "Which keyword declares a variable in JavaScript?",
+      "options": ["int", "let", "define", "varset"],
+      "answer": "let",
+      "description": "JavaScript supports 'var', 'let', and 'const' for declaring variables, with 'let' being block-scoped."
+    },
+    {
+      "id": "js-2",
+      "question": "What is the output of `typeof null`?",
+      "options": ["null", "object", "undefined", "boolean"],
+      "answer": "object",
+      "description": "`typeof null` is a long-standing bug in JavaScript — it returns 'object'."
+    },
+    {
+      "id": "js-3",
+      "question": "Which symbol is used for comments in JavaScript?",
+      "options": ["<!--", "//", "#", "/*--*/"],
+      "answer": "//",
+      "description": "Single-line comments use `//`, while block comments use `/* */`."
+    },
+    {
+      "id": "js-4",
+      "question": "Which method converts JSON text to JavaScript object?",
+      "options": ["JSON.stringify", "JSON.decode", "JSON.parse", "JSON.objectify"],
+      "answer": "JSON.parse",
+      "description": "`JSON.parse()` is used to convert a JSON string into a JavaScript object."
+    },
+    {
+      "id": "js-5",
+      "question": "What does `NaN` stand for?",
+      "options": ["Not a Null", "Not a Node", "Not a Number", "Null and None"],
+      "answer": "Not a Number",
+      "description": "NaN means 'Not a Number', and it's returned when math operations fail."
+    }
+  ],
+  "html-questions": [
+    {
+      "id": "html-1",
+      "question": "What does HTML stand for?",
+      "options": ["Hyper Trainer Markup Language", "Hyper Text Markup Language", "High Text Markup Language", "Hyper Tool Markup Language"],
+      "answer": "Hyper Text Markup Language",
+      "description": "HTML stands for Hyper Text Markup Language and is used to structure web content."
+    },
+    {
+      "id": "html-2",
+      "question": "Which tag is used for inserting images?",
+      "options": ["<img>", "<src>", "<image>", "<pic>"],
+      "answer": "<img>",
+      "description": "The `<img>` tag is used to embed images in an HTML page."
+    },
+    {
+      "id": "html-3",
+      "question": "Which tag creates a line break?",
+      "options": ["<lb>", "<break>", "<br>", "<line>"],
+      "answer": "<br>",
+      "description": "The `<br>` tag inserts a single line break without needing a closing tag."
+    },
+    {
+      "id": "html-4",
+      "question": "Which tag defines a hyperlink?",
+      "options": ["<a>", "<link>", "<href>", "<hyper>"],
+      "answer": "<a>",
+      "description": "`<a>` is used for links, with the `href` attribute pointing to the destination."
+    },
+    {
+      "id": "html-5",
+      "question": "Which element contains metadata about the document?",
+      "options": ["<body>", "<meta>", "<head>", "<header>"],
+      "answer": "<head>",
+      "description": "The `<head>` tag contains metadata like title, charset, and linked resources."
+    }
+  ],
+  "css-questions": [
+    {
+      "id": "css-1",
+      "question": "What does CSS stand for?",
+      "options": ["Creative Style Sheet", "Colorful Style Sheet", "Cascading Style Sheets", "Computer Style Sheet"],
+      "answer": "Cascading Style Sheets",
+      "description": "CSS stands for Cascading Style Sheets and is used to style HTML elements."
+    },
+    {
+      "id": "css-2",
+      "question": "Which symbol is used to select an ID in CSS?",
+      "options": ["#", ".", "*", "$"],
+      "answer": "#",
+      "description": "`#id` is the syntax to select an element by its ID in CSS."
+    },
+    {
+      "id": "css-3",
+      "question": "Which property changes text color?",
+      "options": ["background-color", "text-color", "font-color", "color"],
+      "answer": "color",
+      "description": "The `color` property changes the color of the text."
+    },
+    {
+      "id": "css-4",
+      "question": "Which CSS position makes an element follow scroll?",
+      "options": ["relative", "static", "sticky", "fixed"],
+      "answer": "sticky",
+      "description": "Sticky elements stay within the viewport after crossing a threshold while scrolling."
+    },
+    {
+      "id": "css-5",
+      "question": "How do you select all `<p>` elements inside a `<div>`?",
+      "options": ["div + p", "div p", "div > p", "div.p"],
+      "answer": "div p",
+      "description": "`div p` selects all `<p>` tags that are descendants of a `<div>`."
+    }
+  ]
 }

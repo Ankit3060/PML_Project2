@@ -47,7 +47,7 @@ const Navbar = () => {
 
   const handleUpdateProfile = () => {
     setDropdownOpen(false);
-    navigate("/profile", { state: { edit: true } });
+    navigate("/profile");
   };
 
   const handleChangePassword = () => {
@@ -61,14 +61,6 @@ const Navbar = () => {
       <div className="container flex justify-between h-16 mx-auto items-center">
         <Link to="/" className="text-3xl font-bold">
           SkillStack
-        </Link>
-
-        <Link to="/" className="text-lg font-bold ml-[] ">
-          Home
-        </Link>
-
-        <Link to="/profile" className="text-lg font-bold ml-[] ">
-          Profile
         </Link>
 
         {user ? (
@@ -90,7 +82,7 @@ const Navbar = () => {
                   onClick={handleUpdateProfile}
                   className="block cursor-pointer w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100"
                 >
-                  Update Profile
+                  Profile
                 </button>
                 <button
                   onClick={handleChangePassword}
