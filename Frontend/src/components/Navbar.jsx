@@ -6,8 +6,8 @@ import { toast } from "react-toastify";
 import { FaUserLarge } from "react-icons/fa6";
 import { useLocation } from "react-router-dom";
 
-const Navbar = () => {
-  const { user, setUser, setIsAuthenticated, isAuthenticated } = useAuth();
+const Navbar = ({ isOpen }) => {
+  const { user, setUser, setIsAuthenticated } = useAuth();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -59,13 +59,12 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 p-2 bg-[rgb(214,228,239)] text-gray-800 w-full shadow-xl rounded-xl">
       <div className="container flex justify-between h-16 mx-auto items-center">
-        <Link to="/" className="text-3xl font-bold">
+        <Link to="/" className={`text-3xl font-bold ${isOpen ? "ml-64" : "ml-17"} transition-all duration-300`}>
           SkillStack
         </Link>
 
         {user ? (
           <div className="relative">
-            
             <button
               onClick={toggleDropdown}
               className="w-10 h-10 roundzed-full bg-gray-300 cursor-pointer flex items-center justify-center hover:bg-gray-400 focus:outline-none"

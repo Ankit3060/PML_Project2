@@ -4,17 +4,15 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { AgGridReact } from "ag-grid-react";
 import { AllCommunityModule, ModuleRegistry } from "ag-grid-community";
-ModuleRegistry.registerModules([AllCommunityModule]);
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { FaRegEye } from "react-icons/fa";
-import { useParams } from "react-router-dom";
+ModuleRegistry.registerModules([AllCommunityModule]);
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const { user, setIsAuthenticated, setUser } = useAuth();
   const { examType } = useParams();
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,7 +38,6 @@ const Dashboard = () => {
     fetchUser();
   }, [setIsAuthenticated]);
 
-
   useEffect(() => {
     const fetchData = async () => {
       if (!user || !user.id) return;
@@ -55,24 +52,25 @@ const Dashboard = () => {
           }
         );
 
-        const useArray = response.data.data;
-        const formattedData = useArray.map((item, index) => ({
+        const formattedData = response.data.data.map((item) => ({
           id: item.id,
           totalQuestions: item.totalQuestions,
-          attemptedQuestions: item?.questions?.filter(q => q.selectedAnswer).length || 0,
-          correctQuestions: item?.questions?.filter(q => q.isCorrect).length || 0,
+          attemptedQuestions: item?.questions?.filter((q) => q.selectedAnswer).length || 0,
+          correctQuestions: item?.questions?.filter((q) => q.isCorrect).length || 0,
           totalMarks: item.totalQuestions * 4,
           obtainMarks: item.marks,
           percentage: item.percentage,
           date: item.timestamp
-            ? new Date(item.timestamp).toLocaleString("en-IN", { dateStyle: "short", timeStyle: "short" })
+            ? new Date(item.timestamp).toLocaleString("en-IN", {
+              dateStyle: "short",
+              timeStyle: "short",
+            })
             : "",
         }));
         setData(formattedData);
         setLoading(false);
       } catch (error) {
         toast.error("Failed to fetch data");
-        // navigate("/login");
         setData([]);
         setLoading(false);
       }
@@ -81,30 +79,26 @@ const Dashboard = () => {
     fetchData();
   }, [examType, user]);
 
-
   const CustomButtonComponent = (params) => {
     const handleView = () => {
       navigate(`/view-paper/${params.data.id}`);
-      // navigate("/view-paper")
-      // navigate("/view-paper", { state: { examId: params.data.id } });
     };
 
     return (
-      <div className="flex gap-2">
-        <button
-          className="px-2 py-1 text-xl rounded-2xl cursor-pointer mr-4 hover:bg-blue-400"
-          onClick={handleView}
-        >
-          <FaRegEye />
-        </button>
-      </div>
+      <button
+        className="px-2 py-1 text-xl rounded-2xl cursor-pointer hover:bg-blue-400"
+        onClick={handleView}
+      >
+        <FaRegEye />
+      </button>
     );
   };
+
   const columns = [
-    { field: "id", headerName: "Exam ID", width: 200},
+    { field: "id", headerName: "Exam ID", width: 200 },
     { field: "totalQuestions", headerName: "Total Questions", width: 131 },
     { field: "attemptedQuestions", headerName: "Attempted Questions", width: 168 },
-    { field: "correctQuestions", headerName: "Correct Questions", width: 148},
+    { field: "correctQuestions", headerName: "Correct Questions", width: 148 },
     { field: "totalMarks", headerName: "Total Marks", width: 110 },
     { field: "obtainMarks", headerName: "Obtain Marks", width: 118 },
     { field: "percentage", headerName: "Percentage", width: 103 },
@@ -112,29 +106,25 @@ const Dashboard = () => {
     { field: "actions", headerName: "Actions", cellRenderer: CustomButtonComponent, width: 100 },
   ];
 
-  const pagination = true;
-  const paginationPageSize = 20;
-  const paginationPageSizeSelector = [10, 20, 50];
-
   return (
-    <div className="flex flex-col ml-64 mt-16 p-4 w-[calc(100%-16rem)]"> {/* 16rem = w-64 */}
-      <div className="flex justify-between items-center mb-4">
+    <div className="flex flex-col w-full p-6">
+      <div className="flex justify-end mb-4">
         <button
-          className="px-4 py-2 mt-[-5rem] absolute right-5 cursor-pointer bg-blue-500 text-white rounded hover:bg-blue-600"
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
           onClick={() => navigate(`/exam/${examType}`)}
         >
           Take Quiz
         </button>
       </div>
 
-      <div style={{ height: "560px" }} className="w-full mt-[-25px]">
+      <div className=" w-full" style={{ height: "600px" }}>
         <AgGridReact
           rowData={data}
           columnDefs={columns}
           loading={loading}
-          pagination={pagination}
-          paginationPageSize={paginationPageSize}
-          paginationPageSizeSelector={paginationPageSizeSelector}
+          pagination={true}
+          paginationPageSize={20}
+          paginationPageSizeSelector={[10, 20, 50]}
           enableCellTextSelection={true}
         />
       </div>

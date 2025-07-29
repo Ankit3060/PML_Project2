@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const Profile = () => {
   const location = useLocation();
-  const { user, setUser } = useAuth();
+  const { user, setUser, isAuthenticated, setIsAuthenticated } = useAuth();
 
   const [editMode, setEditMode] = useState(false);
   const [editedUser, setEditedUser] = useState({});
@@ -18,9 +18,34 @@ const Profile = () => {
   const [passwordError, setPasswordError] = useState("");
   const [passwordLoading, setPasswordLoading] = useState(false);
 
+   useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/api/v1/user/me`,
+          {
+            withCredentials: true,
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        setIsAuthenticated(true);
+        setUser(response.data.user);
+      } catch {
+        setIsAuthenticated(false);
+        setUser(null);
+      }
+    };
+
+    fetchUser();
+  }, [setIsAuthenticated, setUser]);
+
+
+
   useEffect(() => {
     fetchUserData();
-  }, []);
+  }, []);  
 
   useEffect(() => {
     if (location.state?.edit) setEditMode(true);

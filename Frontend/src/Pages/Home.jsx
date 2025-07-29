@@ -3,7 +3,7 @@ import { useAuth } from "../context/authContext";
 import axios from "axios";
 
 function Home() {
-  const { setIsAuthenticated, user, setUser } = useAuth();
+  const { setIsAuthenticated, user, setUser, isAuthenticated } = useAuth();
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -29,7 +29,8 @@ function Home() {
   }, [setIsAuthenticated, setUser]);
 
   return (
-    <div className="pl-70 pr-10 pt-10">
+    <div className="pt-10 pr-10">
+
       <h1 className="text-4xl font-bold mb-6 text-center text-blue-700">
         {`Welcome to SkillStack! ${user?.firstName || "Guest"}`}
       </h1>

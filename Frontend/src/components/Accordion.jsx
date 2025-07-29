@@ -107,7 +107,7 @@ function Accordion({ marks, setMarks, data, setData, examType, setAnswers }) {
         const selected = selectedOptions[actualIndex];
 
         return (
-          <div key={actualIndex}>
+          <div key={actualIndex} className=" flex w-full flex-col">
             <div className="flex items-center px-4">
               <button
                 className="accordion text-left w-full font-medium"

@@ -2,7 +2,7 @@
 
 body{
   background-color: rgb(214, 228, 239);
-  /* overflow: hidden; */
+  overflow:auto;
 }
 
 .accordion {
@@ -97,6 +97,7 @@ body{
 .exam-container {
   padding: 20px;
   min-height: calc(100vh - 80px);
-  margin-left: 15rem;
-  overflow-y: hidden;
+  margin-left: -2rem;
+  /* overflow-y: hidden; */
+  /* overflow-y: scroll; */
 }

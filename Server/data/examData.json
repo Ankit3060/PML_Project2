@@ -143,7 +143,7 @@
   },
   {
     "id": "732a1bcb-8f9f-4ff9-9079-706c92aacf8a",
-    "userId":   "79636c0c587ab64b5ec47e6e4727f98e",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
     "examType": "react",
     "marks": 8,
     "totalQuestions": 20,
@@ -1032,5 +1032,91 @@
         "isCorrect": false
       }
     ]
+  },
+  {
+    "id": "5fbccac7-3489-4f7b-9ace-e0a457c85576",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "javascript",
+    "marks": 12,
+    "totalQuestions": 5,
+    "percentage": "60.00",
+    "timestamp": "2025-07-29T05:37:50.894Z",
+    "questions": [
+      {
+        "questionId": "js-1",
+        "question": "Which keyword declares a variable in JavaScript?",
+        "options": [
+          "int",
+          "let",
+          "define",
+          "varset"
+        ],
+        "selectedAnswer": "let",
+        "correctAnswer": "let",
+        "isCorrect": true
+      },
+      {
+        "questionId": "js-2",
+        "question": "What is the output of `typeof null`?",
+        "options": [
+          "null",
+          "object",
+          "undefined",
+          "boolean"
+        ],
+        "selectedAnswer": "boolean",
+        "correctAnswer": "object",
+        "isCorrect": false
+      },
+      {
+        "questionId": "js-3",
+        "question": "Which symbol is used for comments in JavaScript?",
+        "options": [
+          "<!--",
+          "//",
+          "#",
+          "/*--*/"
+        ],
+        "selectedAnswer": "//",
+        "correctAnswer": "//",
+        "isCorrect": true
+      },
+      {
+        "questionId": "js-4",
+        "question": "Which method converts JSON text to JavaScript object?",
+        "options": [
+          "JSON.stringify",
+          "JSON.decode",
+          "JSON.parse",
+          "JSON.objectify"
+        ],
+        "selectedAnswer": "JSON.parse",
+        "correctAnswer": "JSON.parse",
+        "isCorrect": true
+      },
+      {
+        "questionId": "js-5",
+        "question": "What does `NaN` stand for?",
+        "options": [
+          "Not a Null",
+          "Not a Node",
+          "Not a Number",
+          "Null and None"
+        ],
+        "selectedAnswer": "Not a Node",
+        "correctAnswer": "Not a Number",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": "0068e77d-096e-4055-8828-e01ef31f6472",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "javascript",
+    "marks": 0,
+    "totalQuestions": 5,
+    "percentage": "0.00",
+    "timestamp": "2025-07-29T11:20:21.570Z",
+    "questions": []
   }
 ]
