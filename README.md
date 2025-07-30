@@ -38,8 +38,17 @@ Clone the repository
 
 
 ## Screenshots
+![App Screenshot](./Frontend/src/assets/image9.png)
+
+![App Screenshot](./Frontend/src/assets/image10.png)
 
 ![App Screenshot](./Frontend/src/assets/image1.png)
+
+![App Screenshot](./Frontend/src/assets/image6.png)
+
+![App Screenshot](./Frontend/src/assets/image7.png)
+
+![App Screenshot](./Frontend/src/assets/image5.png)
 
 ![App Screenshot](./Frontend/src/assets/image2.png)
 
@@ -47,4 +56,4 @@ Clone the repository
 
 ![App Screenshot](./Frontend/src/assets/image4.png)
 
-![App Screenshot](./Frontend/src/assets/image5.png)
+![App Screenshot](./Frontend/src/assets/image8.png)

@@ -1118,5 +1118,15 @@
     "percentage": "0.00",
     "timestamp": "2025-07-29T11:20:21.570Z",
     "questions": []
+  },
+  {
+    "id": "9642f39d-b22d-4b27-811b-270452196ea9",
+    "userId": "79636c0c587ab64b5ec47e6e4727f98e",
+    "examType": "javascript",
+    "marks": 0,
+    "totalQuestions": 5,
+    "percentage": "0.00",
+    "timestamp": "2025-07-30T07:28:27.609Z",
+    "questions": []
   }
 ]

@@ -19,8 +19,6 @@ const ExamSidebar = ({ isOpen, setIsOpen }) => {
   ];
   const activeRoute = location.pathname;
 
-
-
   return (
     <>{isAuthenticated && (
       <aside

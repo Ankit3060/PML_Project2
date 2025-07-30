@@ -16,12 +16,12 @@
     "lastName": "Kumar",
     "email": "abhi@gmail.com",
     "phone": "9603182341",
-    "gender": "Male",
     "password": "$2b$10$oymfvgXITdBDyDDOBZSqG.hZcoKp8KW37wtfxPl6s9a0A2stEdAFC",
     "role": "User",
     "createdAt": "2025-07-23T06:42:33.539Z",
-    "address": "NSB, Vizag, AP, 530011",
     "dob": "2007-12-08T00:00:00.000Z",
+    "gender": "Male",
+    "address": "Vizag",
     "qualification": "Intermediate"
   },
   {

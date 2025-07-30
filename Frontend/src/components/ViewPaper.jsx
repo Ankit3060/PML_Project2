@@ -11,7 +11,6 @@ function ViewPaper() {
   const [loading, setLoading] = useState(true);
   const { setIsAuthenticated, setUser } = useAuth();
 
-  
   useEffect(() => {
     (async () => {
       try {
@@ -78,10 +77,10 @@ function ViewPaper() {
         {[
           ["Exam Type", paperData.examType.toUpperCase()],
           ["Total Questions", paperData.totalQuestions],
-          ["Attempted", attempted],
-          ["Correct", correct],
+          ["Attempted Questions", attempted],
+          ["Correct Questions", correct],
           ["Total Marks", totalMark],
-          ["Obtained", paperData.marks],
+          ["Obtained Marks", paperData.marks],
           ["Percentage", `${paperData.percentage}%`],
           ["Date", new Date(paperData.timestamp).toLocaleString("en-IN", {
             dateStyle: "short",
@@ -136,7 +135,6 @@ function QuestionCard({ q, index }) {
         {open ? <HiOutlineChevronUp /> : <HiOutlineChevronDown />}
       </button>
 
-      {/* body */}
       {open && (
         <div className="space-y-2 border-t px-4 py-3">
           {q.options.map(opt => {

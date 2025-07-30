@@ -18,7 +18,7 @@ const Profile = () => {
   const [passwordError, setPasswordError] = useState("");
   const [passwordLoading, setPasswordLoading] = useState(false);
 
-   useEffect(() => {
+    useEffect(() => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
@@ -41,11 +41,9 @@ const Profile = () => {
     fetchUser();
   }, [setIsAuthenticated, setUser]);
 
-
-
   useEffect(() => {
     fetchUserData();
-  }, []);  
+  }, []);
 
   useEffect(() => {
     if (location.state?.edit) setEditMode(true);
@@ -185,7 +183,7 @@ const Profile = () => {
     return (
       <div className="min-h-screen bg-[rgb(214, 228, 239)] flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl p-8 shadow-xl max-w-md w-full text-center">
-          <p className="text-red-500 mb-4">Unable to load user data Please login</p>
+          <p className="text-red-500 mb-4">Unable to load user data. Please login.</p>
           <button
             onClick={fetchUserData}
             className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
@@ -199,9 +197,9 @@ const Profile = () => {
 
   return (
     <div className="min-h-screen bg-[rgb(214, 228, 239)] flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl bg-white shadow-xl rounded-2xl p-8 space-y-6">
+      <div className="w-full max-w-2xl bg-white shadow-xl rounded-2xl p-4 sm:p-8 space-y-6">
         <div className="flex justify-between items-center">
-          <h2 className="text-3xl font-bold text-blue-700">User Profile</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-blue-700">User Profile</h2>
           {!editMode ? (
             <button
               onClick={() => setEditMode(true)}
@@ -227,7 +225,7 @@ const Profile = () => {
           )}
         </div>
 
-        <div className="space-y-3 text-gray-700">
+        <div className="space-y-4 text-gray-700">
           <InlineField 
             label="First Name" 
             value={editedUser.firstName || ""} 
@@ -243,7 +241,7 @@ const Profile = () => {
           <InlineField 
             label="Email" 
             value={editedUser.email || ""} 
-            editable={editMode}
+            editable={false}
           />
           <InlineField 
             label="Phone" 
@@ -266,7 +264,7 @@ const Profile = () => {
           />
           <InlineField 
             label="Date of Birth" 
-            value={editedUser.dob || ""} 
+            value={editedUser.dob ? editedUser.dob.split('T')[0] : ""} 
             editable={editMode} 
             type="date" 
             onChange={(val) => handleChange("dob", val)} 
@@ -280,7 +278,7 @@ const Profile = () => {
           <InlineField 
             label="Member Since" 
             value={editedUser.createdAt ? new Date(editedUser.createdAt).toLocaleDateString() : ""} 
-            editable={editMode} 
+            editable={false}
           />
         </div>
 
@@ -361,8 +359,8 @@ const Profile = () => {
 
 const InlineField = ({ label, value, editable = false, onChange, type = "text" }) => {
   return (
-    <div className="flex items-center">
-      <span className="w-40 font-medium">{label}:</span>
+    <div className="flex flex-row sm: sm:flex-row">
+      <span className="w-full sm:w-40 font-medium mb-1 sm:mb-0">{label}:</span>
       {editable ? (
         type === "select" ? (
           <select
@@ -378,11 +376,13 @@ const InlineField = ({ label, value, editable = false, onChange, type = "text" }
         ) : (
           <input
             type={type}
-            max={new Date().toISOString().split('T')[0]}
+            max={type === "date" ? new Date().toISOString().split('T')[0] : undefined}
             value={value}
             onChange={(e) => onChange(e.target.value)}
             className="flex-1 px-3 py-1 border-2 border-gray-300 rounded-lg"
             maxLength={type === "text" ? 50 : undefined}
+            disabled={!onChange}
+            readOnly={!onChange}
           />
         )
       ) : (
